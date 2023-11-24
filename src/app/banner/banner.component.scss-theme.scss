@@ -1,0 +1,87 @@
+@use '@angular/material' as mat;
+@use '@material/density';
+
+
+@mixin _apply-banner-color($color) {
+
+  & {
+    @include mat.overridable-elevation(2,mat.get-color-from-palette($color, 800))
+  }
+  .header {
+    background-color: mat.get-color-from-palette($color, default);
+    color: mat.get-color-from-palette($color, default-contrast);
+  }
+
+  .content {
+    background-color: mat.get-color-from-palette($color, 100);
+    color: mat.get-color-from-palette($color, '100-contrast');
+  }
+}
+
+@mixin color($color-config) {
+  $accent-color: mat.get-color-from-palette($color-config, accent);
+  $primary-color: mat.get-color-from-palette($color-config, primary);
+  $warn-color: mat.get-color-from-palette($color-config, warn);
+
+  app-banner.accent-banner {
+    @include _apply-banner-color($accent-color);
+  }
+
+  app-banner.primary-banner {
+    @include _apply-banner-color($primary-color);
+  }
+
+  app-banner.warn-banner {
+    @include _apply-banner-color($warn-color);
+  }
+}
+
+@mixin typography($typography-config) {
+  app-banner {
+    .header h2 {
+      //font-size: mat.font-size($typography-config, headline-6);
+      //font-family: mat.font-family($typography-config, headline-6);
+      @include mat.typography-level($typography-config, headline-6);
+    }
+
+    .content p {
+      @include mat.typography-level($typography-config, body-2);
+    }
+  }
+
+}
+
+@mixin density($density-scale) {
+  $density-config: (
+    height: (
+      default: 150px,
+      minimum: 90px,
+      maximum: 190px,
+    )
+  );
+  app-banner {
+    height: density.prop-value($density-config, $density-scale,height);
+
+  }
+}
+
+@mixin theme($them-config) {
+  $color-config: mat.get-color-config($them-config);
+  $typography-config: mat.get-typography-config($them-config);
+  $density-config: mat.get-density-config($them-config);
+
+
+  @if $typography-config != null {
+    @include typography($typography-config);
+  }
+
+  @if $color-config != null {
+    @include color($color-config);
+  }
+
+  @if $density-config != null {
+    @include density($density-config);
+  }
+
+}
+

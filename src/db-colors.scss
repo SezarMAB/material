@@ -1,0 +1,445 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+$db-asset-font-db-screensans-regular-name: "DB Screen Sans Regular";
+$db-asset-font-db-screensans-regular-fontfamily: "DB Screen Sans";
+$db-asset-font-db-screensans-regular-fontweight: "400";
+$db-asset-font-db-screensans-regular-woff: "assets/fonts/dbscreensans-regular.woff";
+$db-asset-font-db-screensans-regular-woff2: "assets/fonts/dbscreensans-regular.woff2";
+$db-asset-font-db-screensans-bold-name: "DB Screen Sans Bold";
+$db-asset-font-db-screensans-bold-fontfamily: "DB Screen Sans";
+$db-asset-font-db-screensans-bold-fontweight: "700";
+$db-asset-font-db-screensans-bold-woff: "assets/fonts/dbscreensans-bold.woff";
+$db-asset-font-db-screensans-bold-woff2: "assets/fonts/dbscreensans-bold.woff2";
+$db-asset-font-db-screenhead-name: "DB Screen Head";
+$db-asset-font-db-screenhead-fontfamily: "DB Screen Head";
+$db-asset-font-db-screenhead-fontweight: "300";
+$db-asset-font-db-screenhead-woff: "assets/fonts/dbscreenhead-light.woff";
+$db-asset-font-db-screenhead-woff2: "assets/fonts/dbscreenhead-light.woff2";
+$db-asset-font-db-screensansdigital-name: "DB Screen Sans Digital Regular";
+$db-asset-font-db-screensansdigital-fontfamily: "DB Screen Sans Digital";
+$db-asset-font-db-screensansdigital-fontweight: "400";
+$db-asset-font-db-screensansdigital-woff: "assets/fonts/dbscreensans-digitalregular.woff";
+$db-asset-font-db-screensansdigital-woff2: "assets/fonts/dbscreensans-digitalregular.woff2";
+
+$db-yellow: (
+  100: #ffffdc,
+  200: #ffffaf,
+  300: #fff876,
+  400: #fff000,
+  500: #ffd800,
+  600: #ffbb00,
+  700: #ff9b00,
+  800: #ff7a00,
+  900: #f75f00,
+  A100: #f68d4b, // Light yellow accent
+  A200: #fa7626, // Bright yellow accent
+  A400: #f75f00, // Vivid yellow accent
+  A700: #c04400, // Deep yellow accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  ),
+);
+
+$db-orange: (
+  100: #fff4d8,
+  200: #fce3b4,
+  300: #faca7f,
+  400: #f8ab37,
+  500: #f39200,
+  600: #d77b00,
+  700: #c05e00,
+  800: #a24800,
+  A100: #ffd180, // Light orange accent
+  A200: #ffab40, // Bright orange accent
+  A400: #ff9100, // Vivid orange accent
+  A700: #ff6d00, // Deep orange accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$db-red: (
+  100: #fee6e6,
+  200: #fcc8c3,
+  300: #fa9090,
+  400: #f75056,
+  500: #ec0016, // This is the primary DB Red
+  600: #c50014,
+  700: #9b000e,
+  800: #740009,
+  A100: #ff8a80, // Light red accent
+  A200: #ff5252, // Bright red accent
+  A400: #ff1744, // Vivid red accent
+  A700: #d50000, // Deep red accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$db-burgundy: (
+  100: #f4e8ed,
+  200: #edcbd6,
+  300: #da9aa8,
+  400: #c0687b,
+  500: #a9455d,
+  600: #8c2e46,
+  700: #641e32,
+  800: #4d0820,
+  A100: #e6b8c0, // Light burgundy accent
+  A200: #d18b97, // Bright burgundy accent
+  A400: #bc5e6f, // Vivid burgundy accent
+  A700: #a53048, // Deep burgundy accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$db-pink: (
+  100: #fdeef8,
+  200: #f9d2e5,
+  300: #f4aece,
+  400: #ee7bae,
+  500: #e93e8f,
+  600: #db0078,
+  700: #b80065,
+  800: #970052,
+  A100: #ff80ab, // Light pink accent
+  A200: #ff4081, // Bright pink accent
+  A400: #f50057, // Vivid pink accent
+  A700: #c51162, // Deep pink accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$db-violet: (
+  100: #f4eefa,
+  200: #e0cde4,
+  300: #c2a1c7,
+  400: #9a6ca6,
+  500: #814997,
+  600: #6e368c,
+  700: #581d70,
+  800: #421857,
+  A100: #d885f8, // Light violet accent
+  A200: #c155f6, // Bright violet accent
+  A400: #aa24f4, // Vivid violet accent
+  A700: #8e00ea, // Deep violet accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$db-blue: (
+  100: #e0effb,
+  200: #b4d5f6,
+  300: #73aef4,
+  400: #347de0,
+  500: #1455c0,
+  600: #0c3992,
+  700: #0a1e6e,
+  800: #061350,
+  A100: #82b1ff, // Light blue accent
+  A200: #448aff, // Bright blue accent
+  A400: #2979ff, // Vivid blue accent
+  A700: #2962ff, // Deep blue accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100 : $dark-primary-text,
+    A200 : $dark-primary-text,
+    A400 : $light-primary-text,
+    A700 : $light-primary-text,
+  ),
+);
+
+$db-cyan: (
+  100: #e5faff,
+  200: #bbe6f8,
+  300: #84cfef,
+  400: #55b9e6,
+  500: #309fd1,
+  600: #0087b9,
+  700: #006a96,
+  800: #004b6d,
+  A100: #84ffff, // Light cyan accent
+  A200: #18ffff, // Bright cyan accent
+  A400: #00e5ff, // Vivid cyan accent
+  A700: #00b8d4, // Deep cyan accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100 : $dark-primary-text,
+    A200 : $dark-primary-text,
+    A400 : $dark-primary-text,
+    A700 : $light-primary-text,
+  ),
+);
+
+$db-turquoise: (
+  100: #e3f5f4,
+  200: #bee2e5,
+  300: #83caca,
+  400: #3cb5ae,
+  500: #00a099,
+  600: #008984,
+  700: #006e6b,
+  800: #005752,
+  A100: #a7ffeb, // Light turquoise accent
+  A200: #64ffda, // Bright turquoise accent
+  A400: #1de9b6, // Vivid turquoise accent
+  A700: #00bfa5, // Deep turquoise accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100 : $dark-primary-text,
+    A200 : $dark-primary-text,
+    A400 : $dark-primary-text,
+    A700 : $light-primary-text,
+  ),
+);
+
+$db-green: (
+  100: #e2f3e5,
+  200: #bddbb9,
+  300: #8cbc80,
+  400: #66a558,
+  500: #408335,
+  600: #2a7230,
+  700: #165c27,
+  800: #154a26,
+  A100: #b9f6ca, // Light green accent
+  A200: #69f0ae, // Bright green accent
+  A400: #00e676, // Vivid green accent
+  A700: #00c853, // Deep green accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100 : $dark-primary-text,
+    A200 : $dark-primary-text,
+    A400 : $dark-primary-text,
+    A700 : $light-primary-text,
+  ),
+);
+
+$db-light-green: (
+  100: #ebf7dd,
+  200: #c9eb9e,
+  300: #9fd45f,
+  400: #78be14,
+  500: #63a615,
+  600: #508b1b,
+  700: #44741a,
+  800: #375f15,
+  900 : #357b06,
+  A100 : #c7ffa9,
+  A200 : #a5ff76,
+  A400 : #84ff43,
+  A700 : #73ff2a,
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900 : $light-primary-text,
+    A100 : $dark-primary-text,
+    A200 : $dark-primary-text,
+    A400 : $dark-primary-text,
+    A700 : $light-primary-text,
+  ),
+);
+
+$db-warm-gray: (
+  100: #f5f4f1,
+  200: #ddded6,
+  300: #bcbbb2,
+  400: #9c9a8e,
+  500: #858379,
+  600: #747067,
+  700: #4f4b41,
+  800: #38342f,
+  A100: #e0e0e0, // Light warm-gray accent
+  A200: #bdbdbd, // Bright warm-gray accent
+  A400: #9e9e9e, // Vivid warm-gray accent
+  A700: #757575, // Deep warm-gray accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100 : $dark-primary-text,
+    A200 : $dark-primary-text,
+    A400 : $dark-primary-text,
+    A700 : $light-primary-text,
+  ),
+);
+
+$db-cool-gray: (
+  100: #f0f3f5,
+  200: #d7dce1,
+  300: #afb4bb,
+  400: #878c96,
+  500: #646973,
+  600: #3c414b,
+  700: #282d37,
+  800: #131821,
+  A100: #e1e6ec, // Light cool-gray accent
+  A200: #D6DCE1, // Bright cool-gray accent
+  A400: #78909c, // Vivid cool-gray accent
+  A700: #282D37, // Deep cool-gray accent
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    A100 : $dark-primary-text,
+    A200 : $dark-primary-text,
+    A400 : $dark-primary-text,
+    A700 : $light-primary-text,
+  ),
+);
+
+$db-color-success: mat.define-palette($db-light-green, 600); // This is the general success color
+$db-color-success-small-font: #467a18; // in case a font-size smaller than 14dp is in use (no direct match in the color map)
+$db-color-error: mat.define-palette($db-red, 500); // This is the general error color
+$db-color-error-small-font: #db0014; // in case a font-size smaller than 14dp is in use (no direct match in the color map)
+$db-color-warning: mat.define-palette($db-yellow, 900); // This is the general warning color
+$db-color-warning-small-font: #cc4e00; // in case a font-size smaller than 14dp is in use (no direct match in the color map)
+$db-color-informative: mat.define-palette($db-cyan, 600); // This is the general informative color
+$db-color-informative-small-font: mat.define-palette($db-cyan, 700); // in case a font-size smaller than 14dp is in use
+$db-color-food-drink: mat.define-palette($db-orange, 500);
+$db-color-health: mat.define-palette($db-burgundy, 500);
+$db-color-things-to-know: mat.define-palette($db-warm-gray, 500);
+$db-color-community-facilities: mat.define-palette($db-turquoise, 500);
+$db-color-db-services-facilities: mat.define-palette($db-blue, 600);
+$db-color-shopping: mat.define-palette($db-violet, 500);
+$db-color-arts-culture: mat.define-palette($db-pink, 500);
+$db-color-leisure: mat.define-palette($db-green, 500);
+$db-color-services: mat.define-palette($db-cyan, 500);
+$db-color-guidance: mat.define-palette($db-cool-gray, 600);
+$db-color-white: #ffffff; // This is the primary DB White
+$db-color-black: #000000; // This is the primary DB Black
+$db-color-ice: mat.define-palette($db-cool-gray, 700);
+$db-color-ic: mat.define-palette($db-cool-gray, 500);
+$db-color-ec: mat.define-palette($db-cool-gray, 500);
+$db-color-re: mat.define-palette($db-cool-gray, 400);
+$db-color-rb: mat.define-palette($db-cool-gray, 300);
+$db-color-s-bahn: mat.define-palette($db-green, 600);
+$db-color-u-bahn: mat.define-palette($db-blue, 500);
+$db-color-tram: mat.define-palette($db-burgundy, 500);
+$db-color-intercity-bus: mat.define-palette($db-pink, 500);
+$db-color-bus: mat.define-palette($db-violet, 500);
+$db-color-ship: mat.define-palette($db-cyan, 500);
+$db-color-airplane: mat.define-palette($db-turquoise, 500);
+$db-color-taxi: mat.define-palette($db-yellow, 500);
+$db-color-carsharing: mat.define-palette($db-orange, 500);
+$db-color-bikesharing: mat.define-palette($db-light-green, 500);
+$db-color-walk: mat.define-palette($db-cool-gray, 400);

@@ -1,4 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use 'sass:map';
+@use './db-colors' as db;
+@use './app/banner/banner.component.scss-theme' as banner;
+@include mat.core();
 
+
+.db-button-primary {
+  background-color: mat.get-color-from-palette(db.$db-cool-gray, 700) !important;
+  color: white !important;
+}
+
+$db-primary: mat.get-color-from-palette(db.$db-cool-gray, 700);
+$brand-theme: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette(db.$db-red),
+    accent: mat.define-palette(db.$db-cool-gray, A200, A100, A700),
+    warn: mat.define-palette(db.$db-yellow, A400, A100, A700),
+  ),
+  typography: mat.define-typography-config(
+    $font-family: 'Poppins',
+      //$body-1: mat.define-typography-level(11px,13px),
+    $headline-6: mat.define-typography-level(21px, 23px, 700),
+    //$body-2: mat.define-typography-level(11px, 23px, 700)
+  ),
+  density: -1
+));
+
+//.content{
+//  //@include mat.elevation(24,blue,0.9);
+//  @include mat.overridable-elevation(24,blue,0.9);
+//  @include mat.elevation-transition(1s);
+//  &:hover{
+//    @include mat.elevation(4,green,0.9);
+//  }
+//}
+// rewrite the background color of the theme
+$merged-brand-theme: map.deep-merge($brand-theme, (
+  color: (
+    background: (
+      //background: mat.get-color-from-palette(db.$db-yellow, 100),
+      //card: #d28585
+    ),
+    foreground:(
+      //text: #28d70e,
+      //elevation: #28d70e,  // shadow color
+    )
+  )
+));
+
+//@debug $merged-brand-theme;
+
+//@include mat.all-component-themes($merged-brand-theme);
+//for optimizing the css file size, we can only include the component theme we need
+@include mat.core-theme($merged-brand-theme);
+@include mat.card-theme($merged-brand-theme);
+@include mat.toolbar-theme($merged-brand-theme);
+@include mat.form-field-theme($merged-brand-theme);
+@include mat.select-theme($merged-brand-theme);
+@include mat.button-theme($merged-brand-theme);
+@include mat.icon-button-theme($merged-brand-theme);
+@include mat.icon-theme($merged-brand-theme);
+@include mat.divider-theme($merged-brand-theme);
+
+
+
+
+@include banner.theme($merged-brand-theme);
+@include mat.typography-hierarchy($merged-brand-theme);
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
