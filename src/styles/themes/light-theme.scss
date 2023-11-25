@@ -1,0 +1,29 @@
+@use '@angular/material' as mat;
+@use '../db-colors';
+@use '../utils';
+
+
+$theme-color-config: (
+  primary: mat.define-palette(db-colors.$db-red),
+  accent: mat.define-palette(db-colors.$db-cool-gray, A200, A100, A700),
+  warn: mat.define-palette(db-colors.$db-yellow, A400, A100, A700),
+);
+
+$colors-to-patch: (
+  background: (
+    background: mat.get-color-from-palette(mat.$blue-gray-palette, 50)
+  ),
+  foreground: (
+    text: mat.get-color-from-palette(mat.$blue-gray-palette, 900),
+  )
+);
+
+$brand-theme: mat.define-light-theme(
+    utils.with-core-config($theme-color-config)
+);
+
+$patched-brand-theme: utils.patch-color-config($brand-theme, $colors-to-patch);
+
+@mixin apply-theme() {
+  @include utils.create-theme-bundle($patched-brand-theme);
+}

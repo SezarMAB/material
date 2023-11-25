@@ -1,0 +1,7 @@
+@use '@angular/material' as mat;
+@use '../db-colors' as db;
+
+.db-button-primary {
+  background-color: mat.get-color-from-palette(db.$db-cool-gray, 700) !important;
+  color: white !important;
+}
