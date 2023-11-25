@@ -1,0 +1,19 @@
+@use '@angular/material' as mat;
+@use '../db-colors';
+@use '../utils';
+
+
+$theme-color-config: (
+  primary: mat.define-palette(db-colors.$db-red),
+  accent: mat.define-palette(db-colors.$db-cool-gray, A200, A100, A700),
+  warn: mat.define-palette(db-colors.$db-yellow, A400, A100, A700),
+);
+
+
+$brand-theme: mat.define-dark-theme(
+    utils.with-core-config($theme-color-config)
+);
+
+@mixin apply-theme() {
+  @include utils.create-theme-bundle($brand-theme);
+}
