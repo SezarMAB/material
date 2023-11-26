@@ -16,16 +16,20 @@
     <h2>the smallest</h2>
     <mat-form-field class="drop-down">
       <mat-label>Choose a theme</mat-label>
-      <mat-select>
+      <mat-select (selectionChange)="themeChanges($event)" [value]="themeManager.theme$ | async">
         <mat-option value="dark">Dark</mat-option>
         <mat-option value="light">Light</mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-raised-button color="primary">primary</button>
-    <button mat-raised-button class="db-button-primary">$db-primary</button>
-    <button mat-raised-button color="accent">accent</button>
-    <button mat-raised-button color="warn">warn</button>
-    <button mat-raised-button>basic</button>
+    @if(isThemeSelected) {
+      <button
+        mat-raised-button
+        (click)="themeManager.detectThemeAutomatically()"
+        color="warn"
+      >
+        select theme automatically
+      </button>
+    }
     <mat-card appearance="outlined" class="card">
       <mat-card-header>
         <mat-card-title>Shiba Inu</mat-card-title>
