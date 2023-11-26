@@ -16,6 +16,7 @@ $colors-to-patch: (
   foreground: (
     text: mat.get-color-from-palette(mat.$blue-gray-palette, 900),
   ),
+  success: mat.define-palette(db-colors.$db-green),
 );
 
 $brand-theme: mat.define-light-theme(
@@ -26,6 +27,3 @@ $patched-brand-theme: utils.patch-color-config($brand-theme, $colors-to-patch);
 
 @include utils.create-theme-bundle($patched-brand-theme);
 
-@mixin apply-theme() {
-  @include mat.all-component-themes($patched-brand-theme);
-}

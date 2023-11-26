@@ -2,6 +2,7 @@
 @use 'sass:map';
 @use '../app/banner/banner.component.scss-theme' as banner;
 @use '../app/app-theme.component.scss' as app-root;
+@use './db-colors' as db-colors;
 
 @function with-core-config($color-config){
   @return (
@@ -38,4 +39,13 @@
   @include banner.theme($theme-config);
   @include app-root.theme($theme-config);
 
+
+  .purple-sub-theme {
+    $purple-sub-theme: patch-color-config($theme-config, (
+      primary: mat.define-palette(db-colors.$db-cool-gray, 700, 400,800),
+      accent: mat.define-palette(mat.$pink-palette)
+    ));
+    @include mat.button-color($purple-sub-theme);
+    @include banner.color($purple-sub-theme);
+  }
 }

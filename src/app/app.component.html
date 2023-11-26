@@ -9,9 +9,14 @@
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
+<section class="banner-content">
 <app-banner type="primary" message="This component will get own theme"></app-banner>
-<!--<app-banner type="warn" message="This component will get own theme"></app-banner>-->
-<!--<app-banner type="accent" message="This component will get own theme"></app-banner>-->
+<app-banner type="warn" message="This component will get own theme"></app-banner>
+</section>
+<section class="banner-content">
+<app-banner type="accent" message="This component will get own theme"></app-banner>
+<app-banner type="success" message="This component will get own theme"></app-banner>
+</section>
 <main class="content mat-elevation-z3">
     <h2>the smallest</h2>
     <mat-form-field class="drop-down">
@@ -22,14 +27,26 @@
       </mat-select>
     </mat-form-field>
     @if(isThemeSelected) {
-      <button
-        mat-raised-button
-        (click)="themeManager.detectThemeAutomatically()"
-        color="warn"
-      >
-        select theme automatically
-      </button>
+      <section class="automatically-theme">
+          <button
+            mat-raised-button
+            (click)="themeManager.detectThemeAutomatically()"
+            color="warn"
+          >
+            select theme automatically
+          </button>
+      </section>
     }
+
+  <section class="purple-sub-theme">
+    <button
+      mat-raised-button
+      color="primary"
+    >
+      SUB Theme Button
+    </button>
+    <app-banner type="accent" message="This component will get own theme"></app-banner>
+  </section>
     <mat-card appearance="outlined" class="card">
       <mat-card-header>
         <mat-card-title>Shiba Inu</mat-card-title>
@@ -48,6 +65,10 @@
         <button mat-button>SHARE</button>
       </mat-card-actions>
     </mat-card>
+</main>
+
+<div class="buttons-style">
+
 
   <section>
     <div class="example-label">Basic</div>
@@ -178,4 +199,4 @@
       </div>
     </div>
   </section>
-</main>
+</div>

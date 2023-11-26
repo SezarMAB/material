@@ -18,7 +18,7 @@ import {ThemePalette} from "@angular/material/core";
 })
 export class BannerComponent {
 
-  @Input() type:  ThemePalette = 'primary';
+  @Input() type:  ThemePalette | 'success' = 'primary';
 
   @HostBinding('class')
   get hostClass(){

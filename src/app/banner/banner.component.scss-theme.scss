@@ -19,9 +19,11 @@
 }
 
 @mixin color($color-config) {
+  $color-config: mat.get-color-config($color-config);
   $accent-color: mat.get-color-from-palette($color-config, accent);
   $primary-color: mat.get-color-from-palette($color-config, primary);
   $warn-color: mat.get-color-from-palette($color-config, warn);
+  $success-color: mat.get-color-from-palette($color-config, success);
 
   app-banner.accent-banner {
     @include _apply-banner-color($accent-color);
@@ -34,13 +36,15 @@
   app-banner.warn-banner {
     @include _apply-banner-color($warn-color);
   }
+
+  app-banner.success-banner {
+    @include _apply-banner-color($success-color);
+  }
 }
 
 @mixin typography($typography-config) {
   app-banner {
     .header h2 {
-      //font-size: mat.font-size($typography-config, headline-6);
-      //font-family: mat.font-family($typography-config, headline-6);
       @include mat.typography-level($typography-config, headline-6);
     }
 
