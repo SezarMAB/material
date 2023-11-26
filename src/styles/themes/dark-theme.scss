@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
 @use '../db-colors';
 @use '../utils';
-
+@use './core.scss';
 
 $theme-color-config: (
   primary: mat.define-palette(db-colors.$db-red),
@@ -14,6 +14,5 @@ $brand-theme: mat.define-dark-theme(
     utils.with-core-config($theme-color-config)
 );
 
-@mixin apply-theme() {
-  @include utils.create-theme-bundle($brand-theme);
-}
+@include utils.create-theme-bundle($brand-theme);
+
