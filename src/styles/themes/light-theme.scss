@@ -4,19 +4,20 @@
 @use "./core.scss";
 
 $theme-color-config: (
-  primary: mat.define-palette(db-colors.$db-red),
+  primary:  mat.define-palette(db-colors.$db-cool-gray, 700, 400,800),
   accent: mat.define-palette(db-colors.$db-cool-gray, A200, A100, A700),
-  warn: mat.define-palette(db-colors.$db-yellow, A400, A100, A700),
+  warn: mat.define-palette(db-colors.$db-red)
 );
 
 $colors-to-patch: (
-  background: (
-    background: mat.get-color-from-palette(mat.$blue-gray-palette, 50),
-  ),
+
+  //background: ( // set general background color
+  //  background: mat.get-color-from-palette(mat.$red-palette, 500),
+  //),
   foreground: (
     text: mat.get-color-from-palette(mat.$blue-gray-palette, 900),
   ),
-  success: mat.define-palette(db-colors.$db-green),
+  success: mat.define-palette(db-colors.$db-light-green, 600),
 );
 
 $brand-theme: mat.define-light-theme(

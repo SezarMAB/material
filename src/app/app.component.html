@@ -18,7 +18,10 @@
 <app-banner type="success" message="This component will get own theme"></app-banner>
 </section>
 <main class="content mat-elevation-z3">
-    <h2>the smallest</h2>
+    <h1>H1</h1>
+    <h2>H2</h2>
+    <h3>H3</h3>
+    <p class="mat-headline-4">H4</p>
     <mat-form-field class="drop-down">
       <mat-label>Choose a theme</mat-label>
       <mat-select (selectionChange)="themeChanges($event)" [value]="themeManager.theme$ | async">
@@ -26,6 +29,7 @@
         <mat-option value="light">Light</mat-option>
       </mat-select>
     </mat-form-field>
+
     @if(isThemeSelected) {
       <section class="automatically-theme">
           <button
@@ -38,14 +42,14 @@
       </section>
     }
 
-  <section class="purple-sub-theme">
+  <section class="db-warn">
     <button
       mat-raised-button
-      color="primary"
+      color="warn"
     >
       SUB Theme Button
     </button>
-    <app-banner type="accent" message="This component will get own theme"></app-banner>
+<!--    <app-banner type="accent" message="This component will get own theme"></app-banner>-->
   </section>
     <mat-card appearance="outlined" class="card">
       <mat-card-header>
@@ -70,27 +74,38 @@
 <div class="buttons-style">
 
 
-  <section>
-    <div class="example-label">Basic</div>
+  <section >
     <div class="example-button-row">
-      <button mat-button>Basic</button>
+      <div class="example-label">Basic</div>
       <button mat-button color="primary">Primary</button>
+      <button mat-button color="primary">db-button-primary</button>
       <button mat-button color="accent">Accent</button>
-      <button mat-button color="warn">Warn</button>
-      <button mat-button color="db-button-primary">db-button-primary</button>
+      <button mat-button>Basic</button>
+      <button mat-button color="warn">Brand Primary</button>
       <button mat-button disabled>Disabled</button>
       <a mat-button href="https://www.google.com/" target="_blank">Link</a>
     </div>
   </section>
   <mat-divider></mat-divider>
   <section>
+    <div class="example-label">Basic</div>
+    <div class="example-button-row">
+      <button mat-button>Basic</button>
+      <button mat-button color="primary">Primary</button>
+      <button mat-button color="accent">Accent</button>
+      <button mat-button color="warn">Brand Primary</button>
+      <button mat-button disabled>Disabled</button>
+      <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+  <section >
     <div class="example-label">Raised</div>
     <div class="example-button-row">
       <button mat-raised-button>Basic</button>
       <button mat-raised-button color="primary">Primary</button>
       <button mat-raised-button color="accent">Accent</button>
-      <button mat-raised-button color="warn">Warn</button>
-      <button mat-raised-button class="db-button-primary">db-primary</button>
+      <button mat-raised-button color="warn">Brand Primary</button>
       <button mat-raised-button disabled>Disabled</button>
       <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
     </div>
@@ -102,7 +117,7 @@
       <button mat-stroked-button>Basic</button>
       <button mat-stroked-button color="primary">Primary</button>
       <button mat-stroked-button color="accent">Accent</button>
-      <button mat-stroked-button color="warn">Warn</button>
+      <button mat-stroked-button color="warn">Brand Primary</button>
       <button mat-stroked-button disabled>Disabled</button>
       <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
     </div>
@@ -111,11 +126,10 @@
   <section>
     <div class="example-label">Flat</div>
     <div class="example-button-row">
-      <button mat-flat-button>Basic</button>
+      <button mat-flat-button class="db-button-outline">Basic</button>
       <button mat-flat-button color="primary">Primary</button>
       <button mat-flat-button color="accent">Accent</button>
-      <button mat-flat-button color="warn">Warn</button>
-      <button mat-flat-button class="db-button-primary">Primary</button>
+      <button mat-flat-button color="warn">Brand Primary</button>
       <button mat-flat-button disabled>Disabled</button>
       <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
     </div>
@@ -199,4 +213,8 @@
       </div>
     </div>
   </section>
+
+  <mat-divider></mat-divider>
+
+
 </div>

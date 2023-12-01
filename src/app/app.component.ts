@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {AsyncPipe, NgIf} from '@angular/common';
+import {AsyncPipe} from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,6 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import {BannerComponent} from "./banner/banner.component";
 import {MatDividerModule} from '@angular/material/divider';
 import {ThemeManager} from "./core/theme-manager.service";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -24,8 +26,9 @@ import {ThemeManager} from "./core/theme-manager.service";
     MatCardModule,
     BannerComponent,
     MatDividerModule,
+    MatSlideToggleModule,
     AsyncPipe,
-    NgIf
+    FormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

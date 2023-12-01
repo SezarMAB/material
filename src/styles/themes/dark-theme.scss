@@ -4,14 +4,15 @@
 @use './core.scss';
 
 $theme-color-config: (
-  primary: mat.define-palette(db-colors.$db-cyan, A200, A100, A700),
+  primary:  mat.define-palette(db-colors.$db-cool-gray, 700, 400,800),
   accent: mat.define-palette(db-colors.$db-cool-gray, A200, A100, A700),
-  warn: mat.define-palette(db-colors.$db-yellow, A400, A100, A700),
+  warn: mat.define-palette(db-colors.$db-red)
 );
 
 
 $colors-to-patch: (
-  success: mat.define-palette(db-colors.$db-green),
+  success: mat.define-palette(db-colors.$db-light-green, 600),
+
 );
 
 

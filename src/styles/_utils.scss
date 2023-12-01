@@ -3,18 +3,16 @@
 @use '../app/banner/banner.component.scss-theme' as banner;
 @use '../app/app-theme.component.scss' as app-root;
 @use './db-colors' as db-colors;
+@use './themes/db-typography.scss' as db-typography;
 
 @function with-core-config($color-config){
   @return (
   color: $color-config,
-    typography: mat.define-typography-config(
-      $font-family: 'Poppins',
-      $headline-6: mat.define-typography-level(21px, 23px, 700),
-    ),
+    typography: db-typography.$db-web-typography,
     density: -1
   )
 }
-
+@include mat.typography-hierarchy(db-typography.$db-web-typography);
 
 @function patch-color-config($theme, $overriding-color) {
   @return map.deep-merge($theme, (
@@ -40,12 +38,13 @@
   @include app-root.theme($theme-config);
 
 
-  .purple-sub-theme {
-    $purple-sub-theme: patch-color-config($theme-config, (
-      primary: mat.define-palette(db-colors.$db-cool-gray, 700, 400,800),
-      accent: mat.define-palette(mat.$pink-palette)
+  .db-warn {
+    $db-primary2: patch-color-config($theme-config, (
+      warn: mat.define-palette(db-colors.$db-yellow, A400, A100, A700),
     ));
-    @include mat.button-color($purple-sub-theme);
-    @include banner.color($purple-sub-theme);
+    @include mat.button-color($db-primary2);
+    @include banner.color($db-primary2);
   }
 }
+
+
