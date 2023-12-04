@@ -4,9 +4,9 @@
 @use "./core.scss";
 
 $theme-color-config: (
-  primary:  mat.define-palette(db-colors.$db-cool-gray, 700, 400,800),
-  accent: mat.define-palette(db-colors.$db-cool-gray, A200, A100, A700),
-  warn: mat.define-palette(db-colors.$db-red)
+  primary:  mat.define-palette(db-colors.$db-red),
+  accent: mat.define-palette(db-colors.$db-cool-gray, 700, 400,800),
+  warn: mat.define-palette(db-colors.$db-cool-gray, 700, 400,800)
 );
 
 $colors-to-patch: (
@@ -28,3 +28,6 @@ $patched-brand-theme: utils.patch-color-config($brand-theme, $colors-to-patch);
 
 @include utils.create-theme-bundle($patched-brand-theme);
 
+@mixin apply-theme() {
+  @include utils.create-theme-bundle($patched-brand-theme);
+}

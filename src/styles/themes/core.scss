@@ -5,7 +5,7 @@
   background-color: mat.get-color-from-palette(db.$db-cool-gray, 700) !important;
   color: white !important;
   font-size: 16px !important;
-  font-family: dbscreensansbold, serif !important;
+  font-family: 'DB Screen Sans Bold', serif !important;
 }
 
 .mat-mdc-raised-button.mat-primary,
@@ -13,7 +13,7 @@
 .mat-mdc-outlined-button.mat-primary,
 .mat-mdc-unelevated-button.mat-primary{
   font-size: 16px !important;
-  font-family: dbscreensansbold, serif !important;
+  font-family: 'DB Screen Sans Bold', serif !important;
 }
 
 .mat-mdc-raised-button.mat-warn,
@@ -21,7 +21,7 @@
 .mat-mdc-outlined-button.mat-warn,
 .mat-mdc-unelevated-button.mat-warn{
   font-size: 16px !important;
-  font-family: dbscreensansbold, serif !important;
+  font-family: 'DB Screen Sans Bold', serif !important;
 }
 
 .db-warn .mat-mdc-raised-button.mat-warn,
@@ -29,9 +29,15 @@
 .db-warn .mat-mdc-outlined-button.mat-warn,
 .db-warn .mat-mdc-unelevated-button.mat-warn{
   font-size: 16px !important;
-  font-family: dbscreensansregular, serif !important;
+  font-family: 'DB Screen Sans', serif !important;
 }
 
 .db-button-outline {
   border: 1px solid black !important;
 }
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) {
+  border: 2px solid #0a1e6e !important; /* Change color and size as needed */
+}
+mdc-floating-label mat-mdc-floating-label ng-tns-c1798928316-6 ng-star-inserted{}
+mdc-floating-label mat-mdc-floating-label ng-tns-c1798928316-6 ng-star-inserted{}

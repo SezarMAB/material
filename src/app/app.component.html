@@ -1,220 +1,42 @@
-<mat-toolbar color="accent" class="mat-elevation-z3">
+<mat-toolbar class="mat-elevation-z3">
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>Decoded Frontend - Material Theming</span>
+  @for(route of routes; track route.path) {
+    <button mat-button routerLink="/{{route.path}}">{{route.path}}</button>
+  }
+
   <span class="example-spacer"></span>
 
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
-<section class="banner-content">
-<app-banner type="primary" message="This component will get own theme"></app-banner>
-<app-banner type="warn" message="This component will get own theme"></app-banner>
-</section>
-<section class="banner-content">
-<app-banner type="accent" message="This component will get own theme"></app-banner>
-<app-banner type="success" message="This component will get own theme"></app-banner>
-</section>
 <main class="content mat-elevation-z3">
-    <h1>H1</h1>
-    <h2>H2</h2>
-    <h3>H3</h3>
-    <p class="mat-headline-4">H4</p>
-    <mat-form-field class="drop-down">
-      <mat-label>Choose a theme</mat-label>
-      <mat-select (selectionChange)="themeChanges($event)" [value]="themeManager.theme$ | async">
-        <mat-option value="dark">Dark</mat-option>
-        <mat-option value="light">Light</mat-option>
-      </mat-select>
-    </mat-form-field>
+  @if(showSwitchTheme) {
+  <mat-form-field class="drop-down">
+    <mat-label>Choose a theme</mat-label>
+    <mat-select (selectionChange)="themeChanges($event)" [value]="themeManager.theme$ | async">
+      <mat-option value="dark">Dark</mat-option>
+      <mat-option value="light">Light</mat-option>
+    </mat-select>
+  </mat-form-field>
+  }
 
-    @if(isThemeSelected) {
-      <section class="automatically-theme">
-          <button
-            mat-raised-button
-            (click)="themeManager.detectThemeAutomatically()"
-            color="warn"
-          >
-            select theme automatically
-          </button>
-      </section>
-    }
-
-  <section class="db-warn">
-    <button
-      mat-raised-button
-      color="warn"
-    >
-      SUB Theme Button
-    </button>
-<!--    <app-banner type="accent" message="This component will get own theme"></app-banner>-->
+  @if(isThemeSelected) {
+  <section class="automatically-theme">
+  <button
+  mat-raised-button
+  (click)="themeManager.detectThemeAutomatically()"
+  color="warn"
+  >
+  select theme automatically
+  </button>
   </section>
-    <mat-card appearance="outlined" class="card">
-      <mat-card-header>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
+  }
+
+  <router-outlet></router-outlet>
+
 </main>
 
-<div class="buttons-style">
 
-
-  <section >
-    <div class="example-button-row">
-      <div class="example-label">Basic</div>
-      <button mat-button color="primary">Primary</button>
-      <button mat-button color="primary">db-button-primary</button>
-      <button mat-button color="accent">Accent</button>
-      <button mat-button>Basic</button>
-      <button mat-button color="warn">Brand Primary</button>
-      <button mat-button disabled>Disabled</button>
-      <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-    </div>
-  </section>
-  <mat-divider></mat-divider>
-  <section>
-    <div class="example-label">Basic</div>
-    <div class="example-button-row">
-      <button mat-button>Basic</button>
-      <button mat-button color="primary">Primary</button>
-      <button mat-button color="accent">Accent</button>
-      <button mat-button color="warn">Brand Primary</button>
-      <button mat-button disabled>Disabled</button>
-      <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-    </div>
-  </section>
-  <mat-divider></mat-divider>
-  <section >
-    <div class="example-label">Raised</div>
-    <div class="example-button-row">
-      <button mat-raised-button>Basic</button>
-      <button mat-raised-button color="primary">Primary</button>
-      <button mat-raised-button color="accent">Accent</button>
-      <button mat-raised-button color="warn">Brand Primary</button>
-      <button mat-raised-button disabled>Disabled</button>
-      <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
-    </div>
-  </section>
-  <mat-divider></mat-divider>
-  <section>
-    <div class="example-label">Stroked</div>
-    <div class="example-button-row">
-      <button mat-stroked-button>Basic</button>
-      <button mat-stroked-button color="primary">Primary</button>
-      <button mat-stroked-button color="accent">Accent</button>
-      <button mat-stroked-button color="warn">Brand Primary</button>
-      <button mat-stroked-button disabled>Disabled</button>
-      <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
-    </div>
-  </section>
-  <mat-divider></mat-divider>
-  <section>
-    <div class="example-label">Flat</div>
-    <div class="example-button-row">
-      <button mat-flat-button class="db-button-outline">Basic</button>
-      <button mat-flat-button color="primary">Primary</button>
-      <button mat-flat-button color="accent">Accent</button>
-      <button mat-flat-button color="warn">Brand Primary</button>
-      <button mat-flat-button disabled>Disabled</button>
-      <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
-    </div>
-  </section>
-  <mat-divider></mat-divider>
-  <section>
-    <div class="example-label">Icon</div>
-    <div class="example-button-row">
-      <div class="example-flex-container">
-        <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-          <mat-icon>more_vert</mat-icon>
-        </button>
-        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-          <mat-icon>home</mat-icon>
-        </button>
-        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button disabled aria-label="Example icon button with a open in new tab icon">
-          <mat-icon>open_in_new</mat-icon>
-        </button>
-      </div>
-    </div>
-  </section>
-  <mat-divider></mat-divider>
-  <section>
-    <div class="example-label">FAB</div>
-    <div class="example-button-row">
-      <div class="example-flex-container">
-        <div class="example-button-container">
-          <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </div>
-        <div class="example-button-container">
-          <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
-            <mat-icon>bookmark</mat-icon>
-          </button>
-        </div>
-        <div class="example-button-container">
-          <button mat-fab color="warn" aria-label="Example icon button with a home icon">
-            <mat-icon>home</mat-icon>
-          </button>
-        </div>
-        <div class="example-button-container">
-          <button mat-fab disabled aria-label="Example icon button with a heart icon">
-            <mat-icon>favorite</mat-icon>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <mat-divider></mat-divider>
-  <section>
-    <div class="example-label">Mini FAB</div>
-    <div class="example-button-row">
-      <div class="example-flex-container">
-        <div class="example-button-container">
-          <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </div>
-        <div class="example-button-container">
-          <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
-            <mat-icon>plus_one</mat-icon>
-          </button>
-        </div>
-        <div class="example-button-container">
-          <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
-            <mat-icon>filter_list</mat-icon>
-          </button>
-        </div>
-        <div class="example-button-container">
-          <button mat-mini-fab disabled aria-label="Example icon button with a home icon">
-            <mat-icon>home</mat-icon>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <mat-divider></mat-divider>
-
-
-</div>

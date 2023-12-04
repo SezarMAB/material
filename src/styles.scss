@@ -1,5 +1,6 @@
 @use "@angular/material" as mat;
 
+@use "./styles/themes/light-theme";
 @include mat.core();
 
 

@@ -2,7 +2,7 @@
 
 
 @font-face {
-  font-family: 'DBScreenHeadBlack';
+  font-family: 'DB Screen Head';
   src: url('/assets/fonts/DBScreenHead-Black.woff2') format('woff2'),
   url('/assets/fonts/DBScreenHead-Black.woff') format('woff');
   font-weight: normal;
@@ -10,7 +10,7 @@
 }
 
 @font-face {
-  font-family: 'dbscreenheadlight';
+  font-family: 'DB Screen Head Light';
   src: url('/assets/fonts/dbscreenhead-light.woff2') format('woff2'),
   url('/assets/fonts/dbscreenhead-light.woff') format('woff');
   font-weight: normal;
@@ -18,7 +18,7 @@
 }
 
 @font-face {
-  font-family: 'dbscreensansregular';
+  font-family: 'DB Screen Sans';
   src: url('/assets/fonts/dbscreensans-regular.woff2') format('woff2'),
   url('/assets/fonts/dbscreensans-regular.woff') format('woff');
   font-weight: 300;
@@ -26,7 +26,7 @@
 }
 
 @font-face {
-  font-family: 'DBScreenHeadRegular';
+  font-family: 'DB Screen Head Regular';
   src: url('/assets/fonts/DBScreenHead-Regular.woff2') format('woff2'),
   url('/assets/fonts/DBScreenHead-Regular.woff') format('woff');
   font-weight: 300;
@@ -34,7 +34,7 @@
 }
 
 @font-face {
-  font-family: 'dbscreensansbold';
+  font-family: 'DB Screen Sans Bold';
   src: url('/assets/fonts/dbscreensans-bold.woff2') format('woff2'),
   url('/assets/fonts/dbscreensans-bold.woff') format('woff');
   font-weight: 300;
@@ -43,23 +43,27 @@
 
 
 $db-web-typography: mat.define-typography-config(
-  $font-family: 'dbscreensansregular',
-  $headline-5: mat.define-typography-level(36px, 40px, 400, 'DBScreenHeadBlack'), // <h1></h1>
-  $headline-6: mat.define-typography-level(24px, 28px, 400, 'DBScreenHeadBlack'), // <h2></h2>
-  $subtitle-1: mat.define-typography-level(20px, 24px, 400, 'DBScreenHeadBlack'), // <h3></h3>
-  $headline-4: mat.define-typography-level(18px, 24px, 400, 'dbscreensansbold'), // <h4></h4> .mat-headline-4
+  $font-family: 'DB Screen Sans',
+  //$headline-5: mat.define-typography-level(36px, 40px, 400, 'DB Screen Head'), // <h1></h1>            Headline 1
 
-  $headline-1: mat.define-typography-level(24px, 28px, 400, 'dbscreenheadlight'), // Subline 1
-  $headline-2: mat.define-typography-level(20px, 24px, 400, 'dbscreenheadlight'), // Subline 2
+  $headline-5: mat.define-typography-level(36px, 40px, 400, 'DB Screen Head'), // <h1></h1>            Headline 1
+  //$headline-6: mat.define-typography-level(24px, 28px, 400, 'DB Screen Head'), // <h2></h2>            Headline 2
+  $headline-6: mat.define-typography-level(18px, 24px, 400, 'DB Screen Head'), // <h2></h2>            Headline 2
+  $subtitle-1: mat.define-typography-level(20px, 24px, 400, 'DB Screen Head'), // <h3></h3>            Headline 3
+  $headline-4: mat.define-typography-level(18px, 24px, 400, 'DB Screen Sans'), // .mat-headline-4      Headline 4
 
-  $body-1: mat.define-typography-level(16px, 20px, 400, 'dbscreensansregular'), // body 1
-  $body-2: mat.define-typography-level(14px, 20px, 400, 'dbscreensansregular'), // body 2
-  $caption: mat.define-typography-level(12px, 16px, 400, 'dbscreensansregular'), // caption
+  $headline-1: mat.define-typography-level(24px, 28px, 400, 'DB Screen Head Light'), //.mat-headline-1  Subline 1
+  $headline-2: mat.define-typography-level(20px, 24px, 400, 'DB Screen Head Light'), //.mat-headline-1  Subline 2
+
+  $body-1: mat.define-typography-level(16px, 20px, 400, 'DB Screen Sans'), // body 1
+  $body-2: mat.define-typography-level(14px, 20px, 400, 'DB Screen Sans'), // body 2
+  $caption: mat.define-typography-level(12px, 16px, 400, 'DB Screen Sans'), // caption
 
 
-  $subtitle-2: mat.define-typography-level(14px, 20px, 400, 'dbscreensansregular'), // card-subtitle
-  $button: mat.define-typography-level(16px, 20px, 400, 'dbscreensansregular'), // button
+  $subtitle-2: mat.define-typography-level(14px, 20px, 400, 'DB Screen Sans'), // card-subtitle
+  $button: mat.define-typography-level(16px, 20px, 400, 'DB Screen Sans'), // button
 );
 
+@debug $db-web-typography;
 @include mat.typography-hierarchy($db-web-typography);
 

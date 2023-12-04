@@ -93,7 +93,7 @@ $db-red: (
   400: #f75056,
   500: #ec0016, // This is the primary DB Red
   600: #c50014,
-  700: #9b000e,
+  700: #9b000e, //  Contrast DB Button color
   800: #740009,
   A100: #82b1ff, // Light blue accent
   A200: #448aff, // Bright blue accent
@@ -387,6 +387,7 @@ $db-cool-gray: (
   600: #3c414b,
   700: #282d37,
   800: #131821,
+  900: #121821,
   A100: #e1e6ec, // Light cool-gray accent
   A200: #D6DCE1, // Bright cool-gray accent
   A400: #78909c, // Vivid cool-gray accent
@@ -400,6 +401,7 @@ $db-cool-gray: (
     600: $light-primary-text,
     700: $light-primary-text,
     800: $light-primary-text,
+    900: $light-primary-text,
     A100 : $dark-primary-text,
     A200 : $dark-primary-text,
     A400 : $dark-primary-text,
