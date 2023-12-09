@@ -7,6 +7,9 @@ import {CheckRadioComponent} from "./check-radio/check-radio.component";
 import {DatePComponent} from "./date-p/date-p.component";
 import {TogleComponent} from "./togle/togle.component";
 import {FormsComponent} from "./forms/forms.component";
+import {FormsValidationComponent} from "./forms-validation/forms-validation.component";
+import {StepperComponent} from "./stepper/stepper.component";
+import {TypographyComponent} from "./typography/typography.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'theme', pathMatch: 'full'},
@@ -18,4 +21,7 @@ export const routes: Routes = [
   {path:'dates', component: DatePComponent},
   {path: 'toggle', component: TogleComponent},
   {path: 'forms', component: FormsComponent},
+  {path: 'validation', component: FormsValidationComponent},
+  {path: 'stepper', component: StepperComponent},
+  {path: 'typography', component: TypographyComponent},
 ];

@@ -95,10 +95,6 @@ $db-red: (
   600: #c50014,
   700: #9b000e, //  Contrast DB Button color
   800: #740009,
-  A100: #82b1ff, // Light blue accent
-  A200: #448aff, // Bright blue accent
-  A400: #2979ff, // Vivid blue accent
-  A700: #2962ff, // Deep blue accent
   contrast: (
     100: $dark-primary-text,
     200: $dark-primary-text,
@@ -108,10 +104,6 @@ $db-red: (
     600: $light-primary-text,
     700: $light-primary-text,
     800: $light-primary-text,
-    A100: $dark-primary-text,
-    A200: $dark-primary-text,
-    A400: $light-primary-text,
-    A700: $light-primary-text,
   ),
 );
 
@@ -379,6 +371,7 @@ $db-warm-gray: (
 );
 
 $db-cool-gray: (
+  50: #ffffff,
   100: #f0f3f5,
   200: #d7dce1,
   300: #afb4bb,
@@ -393,6 +386,7 @@ $db-cool-gray: (
   A400: #78909c, // Vivid cool-gray accent
   A700: #282D37, // Deep cool-gray accent
   contrast: (
+    50: $dark-primary-text,
     100: $dark-primary-text,
     200: $dark-primary-text,
     300: $dark-primary-text,

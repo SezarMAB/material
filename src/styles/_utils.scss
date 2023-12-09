@@ -5,6 +5,7 @@
 @use './db-colors' as db-colors;
 @use './themes/db-typography.scss' as db-typography;
 @use '../app/them-test/them-test-theme.component.scss' as them-test-theme;
+@use './themes/core.scss';
 
 @function with-core-config($color-config){
   @return (
@@ -20,7 +21,6 @@
     color: $overriding-color
   ))
 };
-
 
 @mixin create-theme-bundle($theme-config) {
   @include mat.core-theme($theme-config);
@@ -41,12 +41,14 @@
   @include app-root.theme($theme-config);
   @include them-test-theme.theme($theme-config);
 
+  // core
+  @include core.input-border-color($theme-config);
 
-  .db-warn {
+  .db-accent {
     $db-primary2: patch-color-config($theme-config, (
-      warn: mat.define-palette(db-colors.$db-yellow, A400, A100, A700),
+      primary: mat.define-palette(db-colors.$db-red),
       accent: mat.define-palette(db-colors.$db-cool-gray, A200, A100, A700),
-
+      warn: mat.define-palette(db-colors.$db-yellow, A400, A100, A700),
     ));
     @include mat.button-color($db-primary2);
     @include banner.color($db-primary2);

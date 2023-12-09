@@ -28,6 +28,11 @@ export class AppComponent {
   themeManager = inject(ThemeManager);
   title = 'material';
   showSwitchTheme = true;
+
+  currentPath: string| undefined='';
+  activeLink: string | undefined='home';
+
+
   themeChanges($event: MatSelectChange) {
     this.themeManager.switchTheme($event.value);
   }

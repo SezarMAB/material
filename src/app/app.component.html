@@ -2,8 +2,16 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
+
   @for(route of routes; track route.path) {
-    <button mat-button routerLink="/{{route.path}}">{{route.path}}</button>
+    <button
+      mat-button
+      routerLink="/{{route.path}}"
+      routerLinkActive="active-link"
+      (click)="activeLink = route.path"
+    >
+      {{route.path}}
+    </button>
   }
 
   <span class="example-spacer"></span>
@@ -12,31 +20,34 @@
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
+
+
+
 <main class="content mat-elevation-z3">
-  @if(showSwitchTheme) {
-  <mat-form-field class="drop-down">
-    <mat-label>Choose a theme</mat-label>
-    <mat-select (selectionChange)="themeChanges($event)" [value]="themeManager.theme$ | async">
-      <mat-option value="dark">Dark</mat-option>
-      <mat-option value="light">Light</mat-option>
-    </mat-select>
-  </mat-form-field>
-  }
-
-  @if(isThemeSelected) {
-  <section class="automatically-theme">
-  <button
-  mat-raised-button
-  (click)="themeManager.detectThemeAutomatically()"
-  color="warn"
-  >
-  select theme automatically
-  </button>
-  </section>
-  }
-
   <router-outlet></router-outlet>
 
 </main>
 
 
+
+@if(showSwitchTheme) {
+<mat-form-field class="drop-down">
+<mat-label>Choose a theme</mat-label>
+<mat-select (selectionChange)="themeChanges($event)" [value]="themeManager.theme$ | async">
+<mat-option value="dark">Dark</mat-option>
+<mat-option value="light">Light</mat-option>
+</mat-select>
+</mat-form-field>
+}
+
+@if(isThemeSelected) {
+<section>
+<button
+mat-raised-button
+(click)="themeManager.detectThemeAutomatically()"
+color="warn"
+>
+select theme automatically
+</button>
+</section>
+}

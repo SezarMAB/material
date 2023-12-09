@@ -1,19 +1,17 @@
 @use "@angular/material" as mat;
 @use "../db-colors";
 @use "../utils";
-@use "./core.scss";
 
 $theme-color-config: (
-  primary:  mat.define-palette(db-colors.$db-red),
-  accent: mat.define-palette(db-colors.$db-cool-gray, 700, 400,800),
-  warn: mat.define-palette(db-colors.$db-cool-gray, 700, 400,800)
+  primary:  mat.define-palette(db-colors.$db-cool-gray,700, 400,900),
+  accent: mat.define-palette(db-colors.$db-red ),
+  warn: mat.define-palette(db-colors.$db-red),
 );
 
 $colors-to-patch: (
-
-  //background: ( // set general background color
-  //  background: mat.get-color-from-palette(mat.$red-palette, 500),
-  //),
+  background: (
+    background: mat.get-color-from-palette(db-colors.$db-cool-gray, 50),
+  ),
   foreground: (
     text: mat.get-color-from-palette(mat.$blue-gray-palette, 900),
   ),

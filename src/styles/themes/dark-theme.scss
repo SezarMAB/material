@@ -1,7 +1,6 @@
 @use '@angular/material' as mat;
 @use '../db-colors';
 @use '../utils';
-@use './core.scss';
 
 $theme-color-config: (
   primary:  mat.define-palette(db-colors.$db-cool-gray, 700, 400,800),
@@ -9,12 +8,10 @@ $theme-color-config: (
   warn: mat.define-palette(db-colors.$db-red)
 );
 
-
 $colors-to-patch: (
   success: mat.define-palette(db-colors.$db-light-green, 600),
 
 );
-
 
 $brand-theme: mat.define-dark-theme(
     utils.with-core-config($theme-color-config)

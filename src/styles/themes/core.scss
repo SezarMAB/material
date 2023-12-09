@@ -1,13 +1,22 @@
+// Importing Angular Material styles and custom color variables
 @use '@angular/material' as mat;
 @use '../db-colors' as db;
 
-.db-button-primary {
-  background-color: mat.get-color-from-palette(db.$db-cool-gray, 700) !important;
-  color: white !important;
-  font-size: 16px !important;
-  font-family: 'DB Screen Sans Bold', serif !important;
+
+
+@mixin db-core($color-config) {
+  @include input-border-color($color-config);
 }
 
+// Styles for primary buttons in the DB theme
+.db-button-primary {
+  background-color: mat.get-color-from-palette(db.$db-cool-gray, 700) !important; // Sets the background color using the DB cool gray palette
+  color: white !important; // Sets the text color to white
+  font-size: 16px !important; // Sets font size
+  font-family: 'DB Screen Sans Bold', serif !important; // Custom font for the button
+}
+
+// Applying DB Screen Sans Bold font style to various Material buttons when they have 'mat-primary' class
 .mat-mdc-raised-button.mat-primary,
 .mat-mdc-button.mat-primary,
 .mat-mdc-outlined-button.mat-primary,
@@ -16,28 +25,55 @@
   font-family: 'DB Screen Sans Bold', serif !important;
 }
 
-.mat-mdc-raised-button.mat-warn,
-.mat-mdc-button.mat-warn,
-.mat-mdc-outlined-button.mat-warn,
-.mat-mdc-unelevated-button.mat-warn{
+.mat-mdc-raised-button.mat-accent,
+.mat-mdc-button.mat-accent,
+.mat-mdc-outlined-button.mat-accent,
+.mat-mdc-unelevated-button.mat-accent{
   font-size: 16px !important;
   font-family: 'DB Screen Sans Bold', serif !important;
 }
 
-.db-warn .mat-mdc-raised-button.mat-warn,
-.db-warn .mat-mdc-button.mat-warn,
-.db-warn .mat-mdc-outlined-button.mat-warn,
-.db-warn .mat-mdc-unelevated-button.mat-warn{
+.db-accent .mat-mdc-raised-button.mat-accent,
+.db-accent .mat-mdc-button.mat-accent,
+.db-accent .mat-mdc-outlined-button.mat-accent,
+.db-accent .mat-mdc-unelevated-button.mat-accent{
   font-size: 16px !important;
   font-family: 'DB Screen Sans', serif !important;
 }
 
-.db-button-outline {
-  border: 1px solid black !important;
+
+// Ensuring the text field does not shift when focused by adding a transparent border
+//.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+//  border: 1px solid transparent ;
+//}
+
+.mat-calendar-body-selected {
+  background-color: #ec0016 !important;
+  color: white ;
 }
 
-.mdc-text-field--focused:not(.mdc-text-field--disabled) {
-  border: 2px solid #0a1e6e !important; /* Change color and size as needed */
+// Mixin to apply a border color to focused text fields
+@mixin input-border-color($color-config) {
+  $border-color: mat.get-color-from-palette($color-config, primary);
+  $color: mat.get-color-from-palette($border-color, 700);
+
+  //.mdc-text-field--focused:not(.mdc-text-field--disabled) {
+  //  border: 1px solid $color !important;
+  //}
+
+  // Styling for outlined buttons
+  .db-button-outline {
+    border: 1px solid $color !important;
+  }
 }
-mdc-floating-label mat-mdc-floating-label ng-tns-c1798928316-6 ng-star-inserted{}
-mdc-floating-label mat-mdc-floating-label ng-tns-c1798928316-6 ng-star-inserted{}
+
+
+// Typography styles for the DB theme
+
+.db-subtitle-1 {
+  font: 500 24px/28px 'DB Screen Head Light', sans-serif;
+}
+
+.db-subtitle-2 {
+  font: 500 20px/24px 'DB Screen Head Light', sans-serif;
+}

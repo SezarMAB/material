@@ -44,26 +44,21 @@
 
 $db-web-typography: mat.define-typography-config(
   $font-family: 'DB Screen Sans',
-  //$headline-5: mat.define-typography-level(36px, 40px, 400, 'DB Screen Head'), // <h1></h1>            Headline 1
 
-  $headline-5: mat.define-typography-level(36px, 40px, 400, 'DB Screen Head'), // <h1></h1>            Headline 1
-  //$headline-6: mat.define-typography-level(24px, 28px, 400, 'DB Screen Head'), // <h2></h2>            Headline 2
-  $headline-6: mat.define-typography-level(18px, 24px, 400, 'DB Screen Head'), // <h2></h2>            Headline 2
-  $subtitle-1: mat.define-typography-level(20px, 24px, 400, 'DB Screen Head'), // <h3></h3>            Headline 3
-  $headline-4: mat.define-typography-level(18px, 24px, 400, 'DB Screen Sans'), // .mat-headline-4      Headline 4
+  $headline-3: mat.define-typography-level(36px, 40px, 400, 'DB Screen Head'), //                      H1
+  $headline-4: mat.define-typography-level(24px, 28px, 400, 'DB Screen Head'), //                      H2
+  $headline-5: mat.define-typography-level(20px, 24px, 300, 'DB Screen Head'), // <h1></h1>            H3
+  $headline-6: mat.define-typography-level(18px, 24px, 400, 'DB Screen Sans Bold'), // <h2></h2>            H4
 
-  $headline-1: mat.define-typography-level(24px, 28px, 400, 'DB Screen Head Light'), //.mat-headline-1  Subline 1
-  $headline-2: mat.define-typography-level(20px, 24px, 400, 'DB Screen Head Light'), //.mat-headline-1  Subline 2
+  //$subtitle-1: mat.define-typography-level(24px, 28px, 400, 'DB Screen Head Light'), // <h3></h3>            Subline1
+  //$headline-2: mat.define-typography-level(20px, 24px, 400, 'DB Screen Head Light'), //.mat-headline-1  Subline 2
 
   $body-1: mat.define-typography-level(16px, 20px, 400, 'DB Screen Sans'), // body 1
   $body-2: mat.define-typography-level(14px, 20px, 400, 'DB Screen Sans'), // body 2
   $caption: mat.define-typography-level(12px, 16px, 400, 'DB Screen Sans'), // caption
 
-
-  $subtitle-2: mat.define-typography-level(14px, 20px, 400, 'DB Screen Sans'), // card-subtitle
   $button: mat.define-typography-level(16px, 20px, 400, 'DB Screen Sans'), // button
 );
 
-@debug $db-web-typography;
 @include mat.typography-hierarchy($db-web-typography);
 
