@@ -95,6 +95,10 @@ $db-red: (
   600: #c50014,
   700: #9b000e, //  Contrast DB Button color
   800: #740009,
+  A100: #ffd180, // Light orange accent  TODO to redefined
+  A200: #ffab40, // Bright orange accent
+  A400: #ff9100, // Vivid orange accent
+  A700: #ff6d00, // Deep orange accent
   contrast: (
     100: $dark-primary-text,
     200: $dark-primary-text,
@@ -104,6 +108,10 @@ $db-red: (
     600: $light-primary-text,
     700: $light-primary-text,
     800: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $light-primary-text,
   ),
 );
 

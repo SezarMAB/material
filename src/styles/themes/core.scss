@@ -43,9 +43,9 @@
 
 
 // Ensuring the text field does not shift when focused by adding a transparent border
-//.mdc-text-field--filled:not(.mdc-text-field--disabled) {
-//  border: 1px solid transparent ;
-//}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  border: 1px solid transparent ;
+}
 
 .mat-calendar-body-selected {
   background-color: #ec0016 !important;
@@ -57,9 +57,9 @@
   $border-color: mat.get-color-from-palette($color-config, primary);
   $color: mat.get-color-from-palette($border-color, 700);
 
-  //.mdc-text-field--focused:not(.mdc-text-field--disabled) {
-  //  border: 1px solid $color !important;
-  //}
+  .mdc-text-field--focused:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined) {
+    border: 1px solid $color !important;
+  }
 
   // Styling for outlined buttons
   .db-button-outline {
