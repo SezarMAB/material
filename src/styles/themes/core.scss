@@ -77,3 +77,14 @@
 .db-subtitle-2 {
   font: 500 20px/24px 'DB Screen Head Light', sans-serif;
 }
+
+.pulse::after {
+  background: var(--db-pulse-background, #ec0016);
+  border-radius: calc(40px / 7 * 0.5);
+  content: "";
+  display: block;
+  margin-bottom: var(--db-pulse-margin-bottom, 14px);
+  margin-top: calc(var(--db-logo-height, 40px) * 0.5);
+  width: var(--db-logo-width, 58px);
+  height: calc(var(--db-logo-height, 40px) / 7);
+}
